@@ -41,3 +41,7 @@ run:
 clean:
 	# Remove virtual environment
 	# rm -rf $(VENV_NAME)
+
+add:
+	# Add a new expected file to the checklist
+	$(PYTHON_INTERPRETER) add_to_checklist.py $(file_name)
