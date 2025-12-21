@@ -48,6 +48,28 @@ Sort on Delivery Status: Missing, Delivered, Unknown
 Sometimes documents need to be updated to be counted.
 --post can be passed from command line or setup in the checklist
 
+## Adding New Expected Files to the Checklist
+
+You can add new expected files to the checklist from the command line using the `add_to_checklist.py` script. This script will add the specified file to the `checklist.txt` if it does not already exist.
+
+### Usage
+
+To add a new expected file to the checklist, run the following command:
+
+```sh
+python add_to_checklist.py <file_name>
+```
+
+Replace `<file_name>` with the name of the file you want to add to the checklist.
+
+### Example
+
+```sh
+python add_to_checklist.py "ITR - FY2019-20 - 25a - New Document.pdf"
+```
+
+This command will add the file "ITR - FY2019-20 - 25a - New Document.pdf" to the `checklist.txt` if it does not already exist.
+
 ## Adding and Viewing Due Dates
 
 You can now add optional due dates to each file in the checklist. The due dates should be in the format `YYYY-MM-DD`. If a file does not have a specific deadline, you can leave the due date blank.
