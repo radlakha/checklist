@@ -10,7 +10,7 @@ are pending, delivered etc. by scanning the designated folder on my laptop or on
 It also helps in the team setting. Mashed-up with other tools it sends
 quick status update and reminders to the team.
 
-checklist --help --missing --status --all --delivered --unknown
+checklist --help --missing --status --all --delivered --unknown --add --remove --folder
 
 --help
 Displays this message.
@@ -33,6 +33,36 @@ Lists delivered documents from checklist.
 
 --unknown
 Lists unknown documents in folder.
+
+--add
+Adds a new expected document to `checklist.txt` for the current folder (or for the folder specified by `--folder`).
+
+--remove
+Removes an expected document from `checklist.txt` for the current folder (or for the folder specified by `--folder`).
+
+--folder
+Specifies the folder whose documents and `checklist.txt` should be used. If omitted, the current working directory is used.
+
+## Development Setup (macOS)
+
+These steps assume you are developing `checklist` with `python3` and `make` installed.
+
+1. Create a project-local virtual environment and install development dependencies:
+   ```sh
+   make install
+   ```
+   This will create a `.venv` directory in the project root and install the tools from `requirements.txt`.
+2. Activate the virtual environment in your shell (optional but recommended during development):
+   ```sh
+   source .venv/bin/activate
+   ```
+3. Use the `Makefile` targets as your main developer workflow:
+   ```sh
+   make format   # run black
+   make lint     # run flake8
+   make test     # run pytest
+   make run      # run script.py using the virtualenv python
+   ```
 
 //TODO
 Office folks like to use a concept of versioning. This is carried out by
