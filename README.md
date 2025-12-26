@@ -1,16 +1,19 @@
 # checklist
 Begin with the end in mind. Often a task or a project of mine ends with
 a bunch of documents. For example, filing taxes require a set of
-documents, preparing submissions and proposals do so too. I find it very effective to create a list which when checked off will mark the
+documents, preparing submissions and proposals do so too. I find it very
+effective to create a list which when checked off will mark the
 completion of task or project for me.
 
 checklist is a simple tool that lets me quickly list the documents that
-are pending, delivered etc. by scanning the designated folder on my laptop or on shared storage.
+are pending, delivered etc. by scanning the designated folder on my
+laptop or on shared storage.
 
 It also helps in the team setting. Mashed-up with other tools it sends
 quick status update and reminders to the team.
 
-checklist --help --missing --status --all --delivered --unknown
+checklist --help --missing --status --all --delivered --unknown --add
+          --remove --folder
 
 --help
 Displays this message.
@@ -34,49 +37,56 @@ Lists delivered documents from checklist.
 --unknown
 Lists unknown documents in folder.
 
-//TODO
-Office folks like to use a concept of versioning. This is carried out by
-appending a v0 or v1 at the end. I will not follow this approach here
-as it will mix up the final documents with versioning which is best
-done elsewhere.
+--add
+Adds a new expected document to `checklist.txt` for the current folder
+(or for the folder specified by `--folder`). If you want to specify
+optional due date use optional --due flag with date in YYYY-MM-DD
+format.
 
-//Sorting
+--remove
+Removes an expected document from `checklist.txt` for the current folder
+(or for the folder specified by `--folder`).
+
+--folder
+Specifies the folder whose documents and `checklist.txt` should be used.
+If omitted, the current working directory is used.
+
+## Development Setup (macOS)
+
+These steps assume you are developing `checklist` with `python3` and
+`make` installed.
+
+1. Create a project-local virtual environment and install development
+dependencies:
+   ```sh
+   make install
+   ```
+   This will create a `.venv` directory in the project root and install
+   the tools from `requirements.txt`.
+2. Activate the virtual environment in your shell (optional but
+recommended during development):
+   ```sh
+   source .venv/bin/activate
+   ```
+3. Use the `Makefile` targets as your main developer workflow:
+   ```sh
+   make format   # run black
+   make lint     # run flake8
+   make test     # run pytest
+   make run      # run script.py using the virtualenv python
+   ```
+
+
+// Roadmap: Sorting
 Sort on Delivery Time
 Sort on Delivery Status: Missing, Delivered, Unknown
 
-//Not before --post
+// Roadmap: Not before --post
 Sometimes documents need to be updated to be counted.
 --post can be passed from command line or setup in the checklist
 
-## Adding New Expected Files to the Checklist
 
-You can add new expected files to the checklist from the command line using the `add_to_checklist.py` script. This script will add the specified file to the `checklist.txt` if it does not already exist.
-
-### Usage
-
-To add a new expected file to the checklist, run the following command:
-
-```sh
-python add_to_checklist.py <file_name>
-```
-
-Replace `<file_name>` with the name of the file you want to add to the checklist.
-
-### Example
-
-```sh
-python add_to_checklist.py "ITR - FY2019-20 - 25a - New Document.pdf"
-```
-
-This command will add the file "ITR - FY2019-20 - 25a - New Document.pdf" to the `checklist.txt` if it does not already exist.
-
-## Adding and Viewing Due Dates
-
-You can now add optional due dates to each file in the checklist. The due dates should be in the format `YYYY-MM-DD`. If a file does not have a specific deadline, you can leave the due date blank.
-
-### Example
-
-Here is an example of how to add due dates to the files in `checklist.txt`:
+Here is an example of `checklist.txt`:
 
 ```
 ITR - FY2019-20 - 01a - Investment Proof Submission Form (12 BB).xls - 2023-12-01

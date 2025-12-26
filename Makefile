@@ -1,7 +1,7 @@
 # FILEPATH: /workspaces/checklist/Makefile
 
 # Variables
-VENV_NAME?=~/.venv
+VENV_NAME?=.venv
 PYTHON_VERSION?=3
 PYTHON_INTERPRETER=$(VENV_NAME)/bin/python$(PYTHON_VERSION)
 
