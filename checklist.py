@@ -31,8 +31,13 @@ def read_checklist(path: str) -> List[ChecklistEntry]:
                 file_name = name_part.strip()
                 date_str = date_part.strip()
                 if date_str:
-                    # Fail fast if the date is malformed.
-                    due_date = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
+                    # Fail fast with a clear error if the date is malformed.
+                    try:
+                        due_date = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
+                    except ValueError as exc:  # pragma: no cover - covered via higher-level test
+                        raise ValueError(
+                            f"Invalid due date '{date_str}' in checklist file {path}"
+                        ) from exc
                 else:
                     due_date = None
             else:
@@ -47,7 +52,10 @@ def read_checklist(path: str) -> List[ChecklistEntry]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="checklist",
-        description="Checklist CLI for tracking expected documents in a folder.",
+        description=(
+            "Checklist CLI for tracking expected documents in a folder. "
+            "Created by Raman Adlakha and Vakya."
+        ),
     )
 
     # Core flags from plan section 2.1.1

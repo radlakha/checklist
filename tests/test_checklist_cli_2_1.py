@@ -48,6 +48,28 @@ Some-file-name-with-hyphens - and spaces.pdf // 2024-01-15
     assert third_due == datetime.date(2024, 1, 15)
 
 
+def test_read_checklist_raises_value_error_on_malformed_due_date(tmp_path):
+    """\
+    When a due date is present but malformed, checklist.read_checklist should
+    fail fast with a clear ValueError mentioning the bad date string.
+    """
+    checklist_content = """\
+Valid file // 2024-01-15
+Bad date file // 2024-13-40
+"""
+    checklist_path = tmp_path / "checklist.txt"
+    checklist_path.write_text(checklist_content)
+
+    import checklist
+
+    with pytest.raises(ValueError) as excinfo:
+        checklist.read_checklist(str(checklist_path))
+
+    message = str(excinfo.value)
+    assert "2024-13-40" in message
+    assert "Invalid due date" in message
+
+
 @pytest.mark.parametrize("flag", ["--help", "-h"])
 def test_checklist_cli_help_mentions_core_flags(flag):
     """\
