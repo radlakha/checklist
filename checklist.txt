@@ -1,24 +1,24 @@
-ITR - FY2019-20 - 01a - Investment Proof Submission Form (12 BB).xls - 2023-12-01
-ITR - FY2019-20 - 02a - H801 NOC from Spouse.DOC
-ITR - FY2019-20 - 03a - H801 Home Loan Provisional Statement Bajaj.pdf - 2023-12-05
+ITR - FY2019-20 - 01a - Investment Proof Submission Form (12 BB).xls // 2023-12-01
+# ITR - FY2019-20 - 02a - H801 NOC from Spouse.DOC
+# ITR - FY2019-20 - 03a - H801 Home Loan Provisional Statement Bajaj.pdf // 2023-12-05
 ITR - FY2019-20 - 04a - Capital Gains Raman Adlakha.csv
-ITR - FY2019-20 - 05a - Capital Gains Raman Adlakha.pdf - 2023-12-10
+ITR - FY2019-20 - 05a - Capital Gains Raman Adlakha.pdf // 2023-12-10
 ITR - FY2019-20 - 06a - Credit Card Payments Raman Adlakha.pdf
-ITR - FY2019-20 - 07a - Investment Xactions Raman Adlakha.csv - 2023-12-15
+ITR - FY2019-20 - 07a - Investment Xactions Raman Adlakha.csv // 2023-12-15
 ITR - FY2019-20 - 08a - Investment Xactions Raman Adlakha.pdf
-ITR - FY2019-20 - 09a - Savings Interest Income Raman Adlakha.pdf - 2023-12-20
+ITR - FY2019-20 - 09a - Savings Interest Income Raman Adlakha.pdf // 2023-12-20
 ITR - FY2019-20 - 10a - Form16.PDF
-ITR - FY2019-20 - 11a - ASK Equity Capital Gains Tax Statement Raman Adlakha.pdf - 2023-12-25
+ITR - FY2019-20 - 11a - ASK Equity Capital Gains Tax Statement Raman Adlakha.pdf // 2023-12-25
 ITR - FY2019-20 - 12a - ASK Realized Gain Losses statement Raman Adlakha.pdf
-ITR - FY2019-20 - 13a - MF Investment Transaction Report Raman Adlakha.pdf - 2023-12-30
+ITR - FY2019-20 - 13a - MF Investment Transaction Report Raman Adlakha.pdf // 2023-12-30
 ITR - FY2019-20 - 14a - MF Realized Gain Loss Report Raman Adlakha.pdf
-ITR - FY2019-20 - 15a - H801 Home Final Statement Bajaj.pdf - 2024-01-05
+# ITR - FY2019-20 - 15a - H801 Home Final Statement Bajaj.pdf // 2024-01-05
 ITR - FY2019-20 - 16a - Insurance Premium Receipt Max Bupa 2 years.PDF
-ITR - FY2019-20 - 17a - 26AS-Raman Adlakha.pdf - 2024-01-10
-ITR - FY2019-20 - 18a - Declaration of Assets  Liability - Raman Adlakha.xlsx
-ITR - FY2019-20 - 19a - Computation Raman Adlakha.pdf - 2024-01-15
+ITR - FY2019-20 - 17a - 26AS-Raman Adlakha.pdf // 2024-01-10
+ITR - FY2019-20 - 18a - Declaration of Assets  Liability // Raman Adlakha.xlsx
+ITR - FY2019-20 - 19a - Computation Raman Adlakha.pdf // 2024-01-15
 ITR - FY2019-20 - 20a - Challan Raman Adlakha Direct Tax.pdf
-ITR - FY2019-20 - 21a - Income Tax Return Raman Adlakha.pdf - 2024-01-20
+ITR - FY2019-20 - 21a - Income Tax Return Raman Adlakha.pdf // 2024-01-20
 ITR - FY2019-20 - 22a - Income Tax Return Verification Raman Adlakha.pdf
-ITR - FY2019-20 - 23a - Invoice Raman Adlakha.pdf - 2024-01-25
+ITR - FY2019-20 - 23a - Invoice Raman Adlakha.pdf // 2024-01-25
 ITR - FY2019-20 - 24a - Final Intimation from GoI Raman Adlakha adupaxxxxhddmmyyyy.pdf
