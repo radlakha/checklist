@@ -111,11 +111,33 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def _status(folder: Path) -> int:
+    """Print checklist entries for the given folder.
+
+    For now this is a minimal implementation for plan section 2.2, using the
+    simple "<name> - Due: <date>" / "<name> - No due date" format.
+    """
+    checklist_path = folder / "checklist.txt"
+    entries = read_checklist(str(checklist_path))
+    for name, due in entries:
+        if due:
+            print(f"{name} - Due: {due}")
+        else:
+            print(f"{name} - No due date")
+    return 0
+
+
 def main(argv: Optional[list] = None) -> int:
     parser = build_parser()
-    parser.parse_args(argv)
-    # For 2.1 we only care that argument parsing and --help work. Behavior
-    # for each flag will be implemented in later sections of the plan.
+    args = parser.parse_args(argv)
+
+    folder = Path(args.folder) if getattr(args, "folder", None) else Path.cwd()
+
+    # For plan 2.2 we only implement basic --status behavior with folder
+    # selection. Other flags will be wired up in later steps.
+    if args.status:
+        return _status(folder)
+
     return 0
 
 
