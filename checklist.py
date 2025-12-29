@@ -133,9 +133,21 @@ def main(argv: Optional[list] = None) -> int:
 
     folder = Path(args.folder) if getattr(args, "folder", None) else Path.cwd()
 
-    # For plan 2.2 we only implement basic --status behavior with folder
-    # selection. Other flags will be wired up in later steps.
-    if args.status:
+    # For plan 2.2 we implement basic --status behavior with folder
+    # selection, and make it the default when no other action flags are set.
+    has_explicit_action = any(
+        [
+            args.status,
+            getattr(args, "missing", False),
+            getattr(args, "add", None),
+            getattr(args, "remove", None),
+            getattr(args, "all", False),
+            getattr(args, "delivered", False),
+            getattr(args, "unknown", False),
+        ]
+    )
+
+    if args.status or not has_explicit_action:
         return _status(folder)
 
     return 0

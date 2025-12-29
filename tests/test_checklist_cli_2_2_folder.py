@@ -64,3 +64,55 @@ Folder-specific file // 2025-02-02
     stdout_lines = [line.strip() for line in result.stdout.splitlines() if line.strip()]
 
     assert "Folder-specific file - Due: 2025-02-02" in stdout_lines[0]
+
+
+def test_cli_defaults_to_status_when_no_flags_given(tmp_path):
+    """\
+    When no flags are provided (no --status, no --folder), the default
+    behavior should be equivalent to --status using the current working
+    directory.
+    """
+    checklist_content = """\
+Default file // 2025-03-03
+"""
+    (tmp_path / "checklist.txt").write_text(checklist_content)
+
+    script_path = PROJECT_ROOT / "checklist.py"
+    result = subprocess.run(
+        [sys.executable, str(script_path)],
+        cwd=tmp_path,
+        text=True,
+        capture_output=True,
+    )
+
+    assert result.returncode == 0
+    stdout_lines = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+
+    assert "Default file - Due: 2025-03-03" in stdout_lines[0]
+
+
+def test_cli_defaults_to_status_when_only_folder_given(tmp_path):
+    """\
+    When only --folder is provided (no explicit --status), the default
+    behavior should still be equivalent to --status for that folder.
+    """
+    designated = tmp_path / "default-folder"
+    designated.mkdir()
+
+    checklist_content = """\
+Folder-only default file // 2025-04-04
+"""
+    (designated / "checklist.txt").write_text(checklist_content)
+
+    script_path = PROJECT_ROOT / "checklist.py"
+    result = subprocess.run(
+        [sys.executable, str(script_path), "--folder", str(designated)],
+        cwd=PROJECT_ROOT,
+        text=True,
+        capture_output=True,
+    )
+
+    assert result.returncode == 0
+    stdout_lines = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+
+    assert "Folder-only default file - Due: 2025-04-04" in stdout_lines[0]
